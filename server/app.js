@@ -1,0 +1,26 @@
+import express from "express";
+import cors from "cors";
+import pool from "./config/db.js";
+import authRoutes from "./routes/authRoutes.js";
+
+
+
+const app = express(); // FIRST create app
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Routes
+app.use("/api/auth", authRoutes);
+
+// Test route
+app.get("/", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT NOW()");
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+export default app;
