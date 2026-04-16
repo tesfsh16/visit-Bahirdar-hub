@@ -4,6 +4,7 @@ import pool from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import  userRoutes from "./routes/userRoutes.js"
 import adminRoutes from "./routes/adminRoutes.js";
+import providerRoutes from "./routes/providerRoutes.js";
 
 
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/providers", providerRoutes);
 
 // Test route
 app.get("/", async (req, res) => {
