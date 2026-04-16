@@ -19,6 +19,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/providers", providerRoutes);
 
+
 // Test route
 app.get("/", async (req, res) => {
   try {
