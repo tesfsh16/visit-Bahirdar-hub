@@ -5,7 +5,7 @@ import authRoutes from "./routes/authRoutes.js";
 import  userRoutes from "./routes/userRoutes.js"
 import adminRoutes from "./routes/adminRoutes.js";
 import providerRoutes from "./routes/providerRoutes.js";
-
+import listingRoutes from "./routes/listingRoutes.js";
 
 
 const app = express(); // FIRST create app
@@ -18,6 +18,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/providers", providerRoutes);
+app.use("/api/listings", listingRoutes);
 
 
 // Test route
